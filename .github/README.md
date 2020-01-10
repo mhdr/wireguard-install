@@ -14,10 +14,14 @@ The first time you run it, you'll have to follow the assistant and answer a few 
 
 When WireGuard is installed, you can run the script again, and you will get the choice to :
 
-- Add a client
-- Remove a client
-- Uninstall WireGuard
-- Show all users
+- Show WireGuard Interface
+- Start WireGuard Interface
+- Stop WireGuard Interface
+- Add WireGuard Peer
+- Remove WireGuard Peer
+- Uninstall WireGuard Interface
+- Update this script
+- Exit
 
 In your ```/etc/wireguard/clients``` directory, you will have `.wg` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
 
