@@ -623,7 +623,8 @@ else
     echo "   4) Add WireGuard Peer"
     echo "   5) Remove WireGuard Peer"
     echo "   6) Uninstall WireGuard Interface"
-    echo "   7) Exit"
+    echo "   7) Update this script"
+    echo "   8) Exit"
     until [[ "$WIREGUARD_OPTIONS" =~ ^[1-7]$ ]]; do
       read -rp "Select an Option [1-7]: " -e -i 1 WIREGUARD_OPTIONS
     done
@@ -770,7 +771,10 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       chattr +i /etc/resolv.conf
     fi
       ;;
-    7)
+    7) wget -O /etc/wireguard/wireguard-server.sh https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh
+    sleep 2
+    bash /etc/wireguard/wireguard-server.sh
+    8)
       exit
       ;;
     esac
