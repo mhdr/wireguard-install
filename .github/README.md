@@ -5,7 +5,7 @@
 ## Usage 
 
 ```
-wget -O /etc/wireguard/wireguard-server.sh https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh
+wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
 bash /etc/wireguard/wireguard-server.sh
 ```
 
