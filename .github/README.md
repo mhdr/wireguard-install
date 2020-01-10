@@ -40,6 +40,7 @@ The script supports these OS and architectures:
 | -------------- | ---- | ----- | ----- | ----- |
 | Amazon Linux 2 |  ❔  |  ✅  |   ❔  |   ❔  |
 |  Arch Linux    |  ❔  |  ✅  |   ❔  |   ✅  |
+|   Centos 9     |  ❌  |  ✅  |   ❔  |   ❔  |
 |   Centos 8     |  ❌  |  ✅  |   ❔  |   ❔  |
 |   CentOS 7     |  ❔  |  ✅  |   ❌  |   ✅  |
 |   Debian 8     |  ✅  |  ✅  |   ❌  |   ❌  |
@@ -50,6 +51,7 @@ The script supports these OS and architectures:
 | Ubuntu 16.04   |  ✅  |  ✅  |   ❌  |   ❌  |
 | Ubuntu 18.04   |  ❌  |  ✅  |   ✅  |   ✅  |
 | Ubuntu 19.04   |  ❌  |  ✅  |   ✅  |   ✅  |
+| Ubuntu 20.04   |  ❌  |  ✅  |   ✅  |   ✅  |
 
 
 **Q:** Which provider do you recommend?
