@@ -23,7 +23,7 @@ In your ```/etc/wireguard/clients``` directory, you will have `.wg` files. These
 
 ## Features
 
-- Installs and configures a ready-to-use OpenVPN server
+- Installs and configures a ready-to-use WireGuard server
 - Iptables rules and forwarding managed in a seamless way
 - If needed, the script can cleanly remove WireGuard, including configuration and iptables rules
 - Variety of DNS resolvers to be pushed to the clients
