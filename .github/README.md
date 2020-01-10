@@ -5,8 +5,8 @@
 ## Usage 
 
 ```
-wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh
-bash wireguard-server.sh
+wget -O /etc/wireguard/wireguard-server.sh https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh
+bash /etc/wireguard/wireguard-server.sh
 ```
 
 You need to run the script as root
