@@ -22,7 +22,7 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Uninstall WireGuard Interface
 - Update this script
 
-In your ```/etc/wireguard/clients``` directory, you will have `.wg` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
+In your ```/etc/wireguard/clients``` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
 
 ## Features
 
