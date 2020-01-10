@@ -57,20 +57,21 @@ The script supports these OS and architectures:
 | Ubuntu 19.04   |  ❌  |  ✅  |   ✅  |   ✅  |
 | Ubuntu 20.04   |  ❌  |  ✅  |   ✅  |   ✅  |
 
-
-**Q:** Which provider do you recommend?
-**A:** I recommend these:
+---
+Which hosting provider do you recommend?
 - [Google Cloud](https://console.cloud.google.com/freetrial?referralId=9142cd715558411aaaaaf2dc6d2b7886): Worldwide locations, IPv6 support, starting at $10/month
 - [Vultr](https://www.vultr.com/?ref=8211592): Worldwide locations, IPv6 support, starting at $3.50/month
 - [Digital Ocean](https://m.do.co/c/fb46acb2b3b1): Worldwide locations, IPv6 support, starting at $5/month
-- [Linode](https://m.do.co/c/fb46acb2b3b1): Worldwide locations, IPv6 support, starting at $5/month
+- [Linode](https://www.linode.com/?r=63227744138ea4f9d2dff402cfe5b8ad19e45dae): Worldwide locations, IPv6 support, starting at $5/month
 ---
-**Q:** Which WireGuard client do you recommend?
-**A:** If possible, an official WireGuard client.
+Which WireGuard client do you recommend?
 - Windows: [WireGuard](https://www.wireguard.com/install/).
 - macOS: [WireGuard](https://www.wireguard.com/install/).
 - Android: [WireGuard](https://www.wireguard.com/install/).
 - iOS: [WireGuard](https://www.wireguard.com/install/).
+---
+Is there an WireGuard documentation?
+- Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
 ---
 
 ## Credits & Licence
