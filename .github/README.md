@@ -21,7 +21,6 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Remove WireGuard Peer
 - Uninstall WireGuard Interface
 - Update this script
-- Exit
 
 In your ```/etc/wireguard/clients``` directory, you will have `.wg` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
 
@@ -65,10 +64,10 @@ Which hosting provider do you recommend?
 - [Linode](https://www.linode.com/?r=63227744138ea4f9d2dff402cfe5b8ad19e45dae): Worldwide locations, IPv6 support, starting at $5/month
 ---
 Which WireGuard client do you recommend?
-- Windows: [WireGuard](https://www.wireguard.com/install/).
-- macOS: [WireGuard](https://www.wireguard.com/install/).
-- Android: [WireGuard](https://www.wireguard.com/install/).
-- iOS: [WireGuard](https://www.wireguard.com/install/).
+- Windows: [WireGuard](https://download.wireguard.com/windows-client/wireguard-amd64-0.0.38.msi).
+- macOS: [WireGuard](https://apps.apple.com/us/app/wireguard/id1451685025).
+- Android: [WireGuard](https://play.google.com/store/apps/details?id=com.wireguard.android).
+- iOS: [WireGuard](https://itunes.apple.com/us/app/wireguard/id1441195209).
 ---
 Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
