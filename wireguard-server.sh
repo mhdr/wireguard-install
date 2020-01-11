@@ -322,8 +322,51 @@ if [ ! -f "$WG_CONFIG" ]; then
   function ask-install-dns() {
     read -rp "Do You Want To Install Unbound (y/n): " -e -i y INSTALL_UNBOUND
   if [ "$INSTALL_UNBOUND" == "n" ]; then
-    read -rp "Do You Want To Install Pi-Hole (y/n): " -e -i y INSTALL_PIHOLE
-  fi
+      echo "Which DNS do you want to use with the VPN?"
+      echo "   1) AdGuard (Recommended)"
+      echo "   2) Google"
+      echo "   3) OpenDNS"
+      echo "   4) Cloudflare"
+      echo "   5) Verisign"
+      echo "   6) Quad9"
+      echo "   7) FDN"
+      echo "   8) DNS.WATCH"
+      echo "   9) Yandex Basic"
+      echo "   10) Clean Browsing"
+      read -rp "DNS [1-10]: " -e -i 1 DNS_CHOICE
+      case $DNS_CHOICE in
+      1)
+        CLIENT_DNS="176.103.130.130,176.103.130.131,2a00:5a60::ad1:0ff,2a00:5a60::ad2:0ff"
+        ;;
+      2)
+        CLIENT_DNS="8.8.8.8,8.8.4.4,2001:4860:4860::8888,2001:4860:4860::8844"
+        ;;
+      3)
+        CLIENT_DNS="208.67.222.222,208.67.220.220,2620:119:35::35,2620:119:53::53"
+        ;;
+      4)
+        CLIENT_DNS="1.1.1.1,1.0.0.1,2606:4700:4700::1111,2606:4700:4700::1001"
+        ;;
+      5)
+        CLIENT_DNS="64.6.64.6,64.6.65.6,2620:74:1b::1:1,2620:74:1c::2:2"
+        ;;
+      6)
+        CLIENT_DNS="9.9.9.9,149.112.112.112,2620:fe::fe,2620:fe::9"
+        ;;
+      7)
+        CLIENT_DNS="80.67.169.40,80.67.169.12,2001:910:800::40,2001:910:800::12"
+        ;;
+      8)
+        CLIENT_DNS="84.200.69.80,84.200.70.40,2001:1608:10:25::1c04:b12f,2001:1608:10:25::9249:d69b"
+        ;;
+      9)
+        CLIENT_DNS="77.88.8.8,77.88.8.1,2a02:6b8::feed:0ff,2a02:6b8:0:1::feed:0ff"
+        ;;
+      10)
+        CLIENT_DNS="185.228.168.9,185.228.169.9,2a0d:2a00:1::2,2a0d:2a00:2::2"
+        ;;
+      esac
+    fi
   }
 
   # Ask To Install DNS
@@ -533,18 +576,6 @@ fi
 
   # Running Install Unbound
   install-unbound
-
-  # Install Pi-Hole
-  function install-pihole() {
-  if [ "$INSTALL_PIHOLE" = "y" ]; then
-    curl -sSL https://install.pi-hole.net | bash
-  fi
-    # Set Client DNS
-    CLIENT_DNS="10.8.0.1"
-}
-
-  # Run The Function
-  install-pihole
 
   # Set correct time
   function set-correct-time() {
