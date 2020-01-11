@@ -1,7 +1,7 @@
 # Wireguard Install
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install?ref=badge_shield)
-[![DepShield Badge](https://depshield.sonatype.org/badges/owner/repository/depshield.svg)](https://depshield.github.io)
+
 ## Usage 
 
 ```
@@ -64,7 +64,7 @@ The script supports these OS and architectures:
 | Fedora          | :white_check_mark: |
 | RedHat 7.x      | :white_check_mark: |
 | RedHat <6.x     | :x:                |
-| Arch May2019    | :white_check_mark: |
+| Arch            | :white_check_mark: |
 | LXC             | :x:                |
 | OpenVZ          | :x:                |
 
