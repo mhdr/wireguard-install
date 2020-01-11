@@ -775,6 +775,7 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
     wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
     sleep 2
     bash /etc/wireguard/wireguard-server.sh
+      ;;
     8)
       exit
       ;;
