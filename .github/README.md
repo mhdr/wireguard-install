@@ -52,22 +52,21 @@ The script can be configured by setting the following environment variables:
 
 The script supports these OS and architectures:
 
-|                | i386 | amd64 | armhf | arm64 |
-| -------------- | ---- | ----- | ----- | ----- |
-| Amazon Linux 2 |  ❔  |  ✅  |   ❔  |   ❔  |
-|  Arch Linux    |  ❔  |  ✅  |   ❔  |   ✅  |
-|   Centos 9     |  ❌  |  ✅  |   ❔  |   ❔  |
-|   Centos 8     |  ❌  |  ✅  |   ❔  |   ❔  |
-|   CentOS 7     |  ❔  |  ✅  |   ❌  |   ✅  |
-|   Debian 8     |  ✅  |  ✅  |   ❌  |   ❌  |
-|   Debian 9     |  ❌  |  ✅  |   ✅  |   ✅  |
-|   Debian 10    |  ❔  |  ✅  |   ✅  |   ❔  |
-|   Fedora 27    |  ❔  |  ✅  |   ❔  |   ❔  |
-|   Fedora 28    |  ❔  |  ✅  |   ❔  |   ❔  |
-| Ubuntu 16.04   |  ✅  |  ✅  |   ❌  |   ❌  |
-| Ubuntu 18.04   |  ❌  |  ✅  |   ✅  |   ✅  |
-| Ubuntu 19.04   |  ❌  |  ✅  |   ✅  |   ✅  |
-| Ubuntu 20.04   |  ❌  |  ✅  |   ✅  |   ✅  |
+
+| OS              | Supported          |
+| --------------  | ------------------ |
+| Ubuntu LTS Only | :white_check_mark: |
+| Raspbian        | :white_check_mark: |
+| Debian 7-10     | :white_check_mark: |
+| Debian <6       | :x:                |
+| CentOS 7.x      | :white_check_mark: |
+| CentOS <6       | :x:                |
+| Fedora          | :white_check_mark: |
+| RedHat 7.x      | :white_check_mark: |
+| RedHat <6.x     | :x:                |
+| Arch May2019    | :white_check_mark: |
+| LXC             | :x:                |
+| OpenVZ          | :x:                |
 
 ---
 Which hosting provider do you recommend?
