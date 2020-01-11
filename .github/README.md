@@ -60,18 +60,18 @@ The script supports these OS and architectures: {needs to be updated}
 | Ubuntu 19.04    | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
 | Ubuntu 20.04    | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
 | Raspbian        | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
-| Debian 6.x      | :x:                | :x:                | :white_check_mark: | :x:                | :x:                |
+| Debian 6.x      | :x:                | :x:                | :x:                | :x:                | :x:                |
 | Debian 7.x      | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
 | Debian 8.x      | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
-| Debian 9.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
-| Debian 10.x     | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| Debian 9.x      | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Debian 10.x     | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
 | CentOS 6.x      | :x:                | :x:                | :x:                | :x:                | :x:                |
 | CentOS 7.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
 | CentOS 8.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
 | CentOS 9.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
 | Fedora          | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
-| RedHat 7.x      | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | RedHat 6.x      | :x:                | :x:                | :x:                | :x:                | :x:                |
+| RedHat 7.x      | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | Arch            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 | LXC             | :x:                | :x:                | :x:                | :x:                | :x:                |
 | OpenVZ          | :x:                | :x:                | :x:                | :x:                | :x:                |
