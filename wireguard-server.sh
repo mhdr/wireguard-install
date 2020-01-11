@@ -762,9 +762,6 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       rm -f /etc/default/haveged
       # Allow the modification of the resolv file
       chattr -i /etc/resolv.conf
-      # Disable previous DNS servers
-      sed -i "s|nameserver|#nameserver|" /etc/resolv.conf
-      sed -i "s|search|#search|" /etc/resolv.conf
       # Remove localhost as the resolver
       sed -i "s|nameserver 127.0.0.1||" /etc/resolv.conf
       # Going back to the old nameservers
