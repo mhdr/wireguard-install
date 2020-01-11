@@ -50,23 +50,31 @@ The script can be configured by setting the following environment variables:
 
 ## Compatibility
 
-The script supports these OS and architectures:
+The script supports these OS and architectures: {needs to be updated}
 
-
-| OS              | Supported          |
-| --------------  | ------------------ |
-| Ubuntu LTS Only | :white_check_mark: |
-| Raspbian        | :white_check_mark: |
-| Debian 7-10     | :white_check_mark: |
-| Debian <6       | :x:                |
-| CentOS 7.x      | :white_check_mark: |
-| CentOS <6       | :x:                |
-| Fedora          | :white_check_mark: |
-| RedHat 7.x      | :white_check_mark: |
-| RedHat <6.x     | :x:                |
-| Arch            | :white_check_mark: |
-| LXC             | :x:                |
-| OpenVZ          | :x:                |
+| OS              | Supported          | i386               | amd64              | armhf              | arm64              |
+| --------------  | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
+| Amazon Linux    | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Ubuntu 16.04    | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Ubuntu 18.04    | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Ubuntu 19.04    | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Ubuntu 20.04    | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Raspbian        | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Debian 6.x      | :x:                | :x:                | :white_check_mark: | :x:                | :x:                |
+| Debian 7.x      | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Debian 8.x      | :white_check_mark: | :x:                | :white_check_mark: | :x:                | :x:                |
+| Debian 9.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| Debian 10.x     | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| CentOS 6.x      | :x:                | :x:                | :x:                | :x:                | :x:                |
+| CentOS 7.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| CentOS 8.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| CentOS 9.x      | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| Fedora          | :white_check_mark: | :x:                | :x:                | :x:                | :x:                |
+| RedHat 7.x      | :white_check_mark: | :x:                | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| RedHat 6.x      | :x:                | :x:                | :x:                | :x:                | :x:                |
+| Arch            | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| LXC             | :x:                | :x:                | :x:                | :x:                | :x:                |
+| OpenVZ          | :x:                | :x:                | :x:                | :x:                | :x:                |
 
 ---
 Which hosting provider do you recommend?
