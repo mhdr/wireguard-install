@@ -625,8 +625,8 @@ else
     echo "   6) Uninstall WireGuard Interface"
     echo "   7) Update this script"
     echo "   8) Exit"
-    until [[ "$WIREGUARD_OPTIONS" =~ ^[1-7]$ ]]; do
-      read -rp "Select an Option [1-7]: " -e -i 1 WIREGUARD_OPTIONS
+    until [[ "$WIREGUARD_OPTIONS" =~ ^[1-8]$ ]]; do
+      read -rp "Select an Option [1-8]: " -e -i 1 WIREGUARD_OPTIONS
     done
     case $WIREGUARD_OPTIONS in
     1)
