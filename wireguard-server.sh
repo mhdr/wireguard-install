@@ -766,7 +766,8 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       sed -i "s|nameserver|#nameserver|" /etc/resolv.conf
       sed -i "s|search|#search|" /etc/resolv.conf
       # Remove localhost as the resolver
-      sed -i "s|nameserver 127.0.0.1|#nameserver 127.0.0.1|" /etc/resolv.conf
+      sed -i "s|nameserver 127.0.0.1||" /etc/resolv.conf
+      # Going back to the old nameservers
       sed -i "s|#nameserver|nameserver|" /etc/resolv.conf
       sed -i "s|#search|search|" /etc/resolv.conf
       # Use -i to enable modifications
