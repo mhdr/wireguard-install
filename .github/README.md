@@ -11,7 +11,7 @@
 - CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian
 - Linux Kernel 4.1 or newer
 - You will need root access, or a user account with `sudo` privilege.
----
+
 ## Installation
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
@@ -32,6 +32,7 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Remove WireGuard Peer
 - Uninstall WireGuard Interface
 - Update this script
+
 ---
 ### Features
 
@@ -43,6 +44,7 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Block DNS leaks
 - Protect clients with a password (private key encryption)
 - Many other little things!
+
 ---
 ### Options
 The script can be configured by setting the following environment variables:
@@ -54,6 +56,7 @@ The script can be configured by setting the following environment variables:
 * SERVER_HOST_V6 - public IPv6 address, detected by default
 * SERVER_PORT - public port for wireguard server
 * MTU_CHOICE - the MTU the client will use to connect to DNS
+
 ---
 ### Compatibility
 | OS              | Supported          | i386               | amd64              | armhf              | arm64              |
@@ -92,6 +95,7 @@ The script can be configured by setting the following environment variables:
 | Rackspace       |:white_check_mark:  |
 | Scaleway        |:white_check_mark:  |
 | EuroVPS         |:white_check_mark:  |
+
 ---
 ### Q&A
 Which hosting provider do you recommend?
@@ -108,8 +112,8 @@ Which WireGuard client do you recommend?
 ---
 Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
----
 
+---
 ### Credits & Licence
 
 Many thanks to the [contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
