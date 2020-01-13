@@ -1,4 +1,4 @@
-# Wireguard Installer
+# Secure Wireguard Installer
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/complexorganizations/wireguard-install)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install?ref=badge_shield)
@@ -6,22 +6,29 @@
 ![GitHub](https://img.shields.io/github/license/complexorganizations/wireguard-install)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/y/complexorganizations/wireguard-install)
 ![GitHub issues](https://img.shields.io/github/issues/complexorganizations/wireguard-install)
+![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)
 
-## Prerequisite 
+### Prerequisite 
 - Linux Server
 - Client Device
 - Sudo acess
 
-## Installation
+### Installation
+
+Lets ```wget``` the file.
 
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
+```
+You need to run the script as ```root```
+```
 bash /etc/wireguard/wireguard-server.sh
 ```
-
-You need to run the script as ```root```
-
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
+
+In your ```/etc/wireguard/clients``` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
+
+### After Installation
 
 When WireGuard is installed, you can run the script again, and you will get the choice to :
 
@@ -33,9 +40,7 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Uninstall WireGuard Interface
 - Update this script
 
-In your ```/etc/wireguard/clients``` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
-
-## Features
+### Features
 
 - Installs and configures a ready-to-use WireGuard server
 - Iptables rules and forwarding managed in a seamless way
@@ -46,7 +51,7 @@ In your ```/etc/wireguard/clients``` directory, you will have `.conf` files. The
 - Protect clients with a password (private key encryption)
 - Many other little things!
 
-## Options
+### Options
 
 The script can be configured by setting the following environment variables:
 
@@ -59,7 +64,7 @@ The script can be configured by setting the following environment variables:
 * MTU_CHOICE - the MTU the client will use to connect to DNS
 
 
-## Compatibility
+### Compatibility
 
 The script supports these OS and architectures:
 
@@ -103,7 +108,7 @@ Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
 ---
 
-## Credits & Licence
+### Credits & Licence
 
 Many thanks to the [contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
 This project is under the [MIT Licence](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/LICENSE)
