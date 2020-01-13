@@ -9,19 +9,13 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)
 
 ### Prerequisite 
-- Linux Server
-- Client Device
-- Sudo acess
+- CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian
+- Linux Kernel 4.1 or newer
+- You will need root access, or a user account with `sudo` privilege.
 
 ## Installation
-
-Lets ```wget``` the file.
-
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
-```
-You need to run the script as ```root```
-```
 bash /etc/wireguard/wireguard-server.sh
 ```
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
