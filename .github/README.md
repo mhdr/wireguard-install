@@ -23,7 +23,6 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 
 ---
 ### After Installation
-When WireGuard is installed, you can run the script again, and you will get the choice to :
 
 - Show WireGuard Interface
 - Start WireGuard Interface
@@ -47,7 +46,6 @@ When WireGuard is installed, you can run the script again, and you will get the 
 
 ---
 ### Options
-The script can be configured by setting the following environment variables:
 
 * INTERACTIVE - if set to "no", the script will not prompt for user input
 * PRIVATE_SUBNET_V4 - private subnet configuration, "10.0.0.0/24" by default
@@ -115,6 +113,5 @@ Is there an WireGuard documentation?
 
 ---
 ### Credits & Licence
-
 Many thanks to the [contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
 This project is under the [MIT Licence](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/LICENSE)
