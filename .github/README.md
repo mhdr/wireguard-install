@@ -23,7 +23,6 @@ The first time you run it, you'll have to follow the assistant and answer a few 
 In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
 
 ### After Installation
-
 When WireGuard is installed, you can run the script again, and you will get the choice to :
 
 - Show WireGuard Interface
@@ -46,7 +45,6 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Many other little things!
 
 ### Options
-
 The script can be configured by setting the following environment variables:
 
 * INTERACTIVE - if set to "no", the script will not prompt for user input
@@ -59,7 +57,6 @@ The script can be configured by setting the following environment variables:
 
 
 ### Compatibility
-
 The script supports these OS and architectures:
 
 | OS              | Supported          | i386               | amd64              | armhf              | arm64              |
@@ -85,6 +82,7 @@ The script supports these OS and architectures:
 | Arch            |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |
 | LXC             |:x:                 |:x:                 |:x:                 |:x:                 |:x:                 |
 | OpenVZ          |:x:                 |:x:                 |:x:                 |:x:                 |:x:                 |
+
 ---
 Which hosting provider do you recommend?
 - [Google Cloud](https://console.cloud.google.com/freetrial?referralId=9142cd715558411aaaaaf2dc6d2b7886): Worldwide locations, starting at $10/month
