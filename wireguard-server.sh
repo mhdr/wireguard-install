@@ -5,7 +5,7 @@
 # Check Root Function
 function root-check() {
   if [[ "$EUID" -ne 0 ]]; then
-    echo "Hello there non ROOT user, you need to run this as ROOT."
+    echo "You need to run this script as root."
     exit
   fi
 }
