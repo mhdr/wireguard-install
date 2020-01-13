@@ -103,13 +103,11 @@ Which hosting provider do you recommend?
 - [Vultr](https://www.vultr.com/?ref=8211592): Worldwide locations, IPv6 support, starting at $3.50/month
 - [Digital Ocean](https://m.do.co/c/fb46acb2b3b1): Worldwide locations, IPv6 support, starting at $5/month
 - [Linode](https://www.linode.com/?r=63227744138ea4f9d2dff402cfe5b8ad19e45dae): Worldwide locations, IPv6 support, starting at $5/month
----
 Which WireGuard client do you recommend?
 - Windows: [WireGuard](https://download.wireguard.com/windows-client/wireguard-amd64-0.0.38.msi).
 - macOS: [WireGuard](https://apps.apple.com/us/app/wireguard/id1451685025).
 - Android: [WireGuard](https://play.google.com/store/apps/details?id=com.wireguard.android).
 - iOS: [WireGuard](https://itunes.apple.com/us/app/wireguard/id1441195209).
----
 Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
 
