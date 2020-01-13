@@ -756,6 +756,7 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
         apt-get remove --purge wireguard qrencode haveged unbound unbound-host -y
       elif [ "$DISTRO" == "Raspbian" ]; then
         apt-get remove --purge wireguard qrencode haveged unbound unbound-host dirmngr -y
+        apt-key del 04EE7237B7D453EC
       elif [ "$DISTRO" == "Arch" ]; then
         pacman -Rs wireguard qrencode haveged unbound unbound-host -y
       elif [ "$DISTRO" == "Fedora" ]; then
