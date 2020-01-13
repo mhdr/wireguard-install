@@ -1,5 +1,6 @@
 #!/bin/bash
 # Secure WireGuard For CentOS, Debian, Ubuntu, Raspbian, Arch, Fedora, Redhat
+# https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/.github/LICENSE [MIT LICENSE]
 
 # Check Root Function
 function root-check() {
