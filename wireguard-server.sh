@@ -763,13 +763,6 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       elif [ "$DISTRO" == "Redhat" ]; then
         yum remove wireguard qrencode haveged unbound unbound-host -y
       fi
-      # Remove Pi-Hole
-      pihole uninstall
-      # Remove Pi-Hole Files
-      rm -rf /etc/.pihole
-      rm -rf /etc/pihole
-      rm -rf /opt/pihole
-      rm -rf /var/www/html/admin
       # Removing Wireguard Files
       rm -rf /etc/wireguard
       # Removing Wireguard User Config Files
