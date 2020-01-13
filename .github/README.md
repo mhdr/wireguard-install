@@ -14,7 +14,7 @@ wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/ma
 bash /etc/wireguard/wireguard-server.sh
 ```
 
-You need to run the script as root ```sudo su```
+You need to run the script as ```root```
 
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
 
