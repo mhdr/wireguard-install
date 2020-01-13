@@ -1,5 +1,10 @@
-version: 2
-description: WireGuard VPN
+version: 2.1
+description: WireGuard
+
+orbs:
+  codecov:
+  shellcheck: circleci/shellcheck@1.2.0
+  slack:
 
 executors:
   default:
@@ -14,7 +19,7 @@ commands:
           command: |
             sudo add-apt-repository ppa:wireguard/wireguard -y
             sudo apt-get update
-            sudo apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
+            sudo apt-get install wireguard linux-headers-$(uname -r)
   connect:
     description: "Connect to WireGuard VPN"
     parameters:
