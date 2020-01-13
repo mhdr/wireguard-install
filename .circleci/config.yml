@@ -1,0 +1,62 @@
+version: 
+description: WireGuard VPN
+
+executors:
+  default:
+    machine: true
+
+commands:
+  install:
+    description: "Install WireGuard VPN client"
+    steps:
+      - run:
+          name: Install WireGuard Client
+          command: |
+            sudo add-apt-repository ppa:wireguard/wireguard -y
+            sudo apt-get update
+            sudo apt-get install wireguard-dkms wireguard-tools linux-headers-$(uname -r)
+  connect:
+    description: "Connect to WireGuard VPN"
+    parameters:
+      config:
+        description: "ENV var name containing WireGuard client config file content"
+        type: env_var_name
+        default: WIREGUARD_CONFIG
+    steps:
+      - run:
+          name: Generate WireGuard VPN client config file
+          command: |
+            echo -n "${<<parameters.config>>:?}" | \
+              base64 --decode | \
+              sed "s/0.0.0.0\/0/$(curl -s https://ifconfig.me)/g" > wg0.conf
+            sudo mv wg0.conf /etc/wireguard/wg0.conf
+            sudo chmod 600 /etc/wireguard/wg0.conf
+      - run:
+          name: Connect to VPN
+          command: |
+            sudo wg-quick up wg0
+  disconnect:
+    description: "Disconnect from WireGuard VPN"
+    steps:
+      - run:
+          name: Disconnect from VPN
+          command: sudo wg-quick down wg0 || true
+      - run:
+          name: remove WireGuard config
+          command: sudo rm /etc/wireguard/wg0.conf
+
+example:
+  secure-ping:
+    description: "Establish VPN connection and execute a command within it"
+    usage:
+      version: 2.1
+      orbs:
+        wg: titel-media/terraform@0.0.1
+      jobs:
+        ping:
+          executor: wg/default
+          steps:
+            - wg/install
+            - wg/connect
+            - run: ping -c 5 192.0.2.1
+            - wg/disconnect
