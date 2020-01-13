@@ -4,7 +4,7 @@
 
 ## Prerequisite 
 - Linux Server
-- Client
+- Client Device
 - Sudo acess
 
 ## Installation
