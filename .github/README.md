@@ -92,6 +92,8 @@ The script can be configured by setting the following environment variables:
 | Microsoft Azure |:white_check_mark:  |
 | OpenStack       |:white_check_mark:  |
 | Rackspace       |:white_check_mark:  |
+| Scaleway        |:white_check_mark:  |
+| EuroVPS         |:white_check_mark:  |
 
 ---
 Which hosting provider do you recommend?
