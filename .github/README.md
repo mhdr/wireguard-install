@@ -1,5 +1,4 @@
 # Secure Wireguard Installer
-
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/complexorganizations/wireguard-install)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install?ref=badge_shield)
 ![GitHub All Releases](https://img.shields.io/github/downloads/complexorganizations/wireguard-install/total)
@@ -12,7 +11,7 @@
 - CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian
 - Linux Kernel 4.1 or newer
 - You will need root access, or a user account with `sudo` privilege.
-
+---
 ## Installation
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
@@ -22,6 +21,7 @@ The first time you run it, you'll have to follow the assistant and answer a few 
 
 In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
 
+---
 ### After Installation
 When WireGuard is installed, you can run the script again, and you will get the choice to :
 
@@ -32,7 +32,7 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Remove WireGuard Peer
 - Uninstall WireGuard Interface
 - Update this script
-
+---
 ### Features
 
 - Installs and configures a ready-to-use WireGuard server
@@ -43,7 +43,7 @@ When WireGuard is installed, you can run the script again, and you will get the 
 - Block DNS leaks
 - Protect clients with a password (private key encryption)
 - Many other little things!
-
+---
 ### Options
 The script can be configured by setting the following environment variables:
 
@@ -54,10 +54,8 @@ The script can be configured by setting the following environment variables:
 * SERVER_HOST_V6 - public IPv6 address, detected by default
 * SERVER_PORT - public port for wireguard server
 * MTU_CHOICE - the MTU the client will use to connect to DNS
-
-
+---
 ### Compatibility
-
 | OS              | Supported          | i386               | amd64              | armhf              | arm64              |
 | --------------  | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
 | Amazon Linux    |:x:                 |:x:                 |:x:                 |:x:                 |:x:                 |
@@ -94,8 +92,8 @@ The script can be configured by setting the following environment variables:
 | Rackspace       |:white_check_mark:  |
 | Scaleway        |:white_check_mark:  |
 | EuroVPS         |:white_check_mark:  |
-
 ---
+### Q&A
 Which hosting provider do you recommend?
 - [Google Cloud](https://console.cloud.google.com/freetrial?referralId=9142cd715558411aaaaaf2dc6d2b7886): Worldwide locations, starting at $10/month
 - [Vultr](https://www.vultr.com/?ref=8211592): Worldwide locations, IPv6 support, starting at $3.50/month
