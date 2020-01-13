@@ -57,7 +57,6 @@ The script can be configured by setting the following environment variables:
 
 
 ### Compatibility
-The script supports these OS and architectures:
 
 | OS              | Supported          | i386               | amd64              | armhf              | arm64              |
 | --------------  | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
@@ -82,6 +81,17 @@ The script supports these OS and architectures:
 | Arch            |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |
 | LXC             |:x:                 |:x:                 |:x:                 |:x:                 |:x:                 |
 | OpenVZ          |:x:                 |:x:                 |:x:                 |:x:                 |:x:                 |
+
+| Cloud           | Supported          |
+| --------------  | ------------------ |
+| Amazon EC2      |:white_check_mark:  |
+| Google Cloud    |:white_check_mark:  |
+| Linode          |:white_check_mark:  |
+| DigitalOcean    |:white_check_mark:  |
+| Vultr           |:white_check_mark:  |
+| Microsoft Azure |:white_check_mark:  |
+| OpenStack       |:white_check_mark:  |
+| Rackspace       |:white_check_mark:  |
 
 ---
 Which hosting provider do you recommend?
