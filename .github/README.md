@@ -2,14 +2,20 @@
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install?ref=badge_shield)
 
-## Usage 
+## Prerequisite 
+- Linux Server
+- Client
+- Sudo acess
+
+## Installation
 
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
 bash /etc/wireguard/wireguard-server.sh
 ```
 
-You need to run the script as root
+You need to run the script as root ```sudo su```
+
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
 
 When WireGuard is installed, you can run the script again, and you will get the choice to :
@@ -50,7 +56,7 @@ The script can be configured by setting the following environment variables:
 
 ## Compatibility
 
-The script supports these OS and architectures: {needs to be updated}
+The script supports these OS and architectures:
 
 | OS              | Supported          | i386               | amd64              | armhf              | arm64              |
 | --------------  | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
