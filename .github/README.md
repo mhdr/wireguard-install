@@ -59,7 +59,7 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 ### Compatibility
 | OS              | Supported          | i386               | amd64              | armhf              | arm64              |
 | --------------  | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| Amazon Linux    |:x:                 |:x:                 |:x:                 |:x:                 |:x:                 |
+| Amazon Linux    |:white_check_mark:  |:x:                 |:white_check_mark:  |:x:                 |:x:                 |
 | Ubuntu 16.04    |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |
 | Ubuntu 18.04    |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |
 | Ubuntu 19.04    |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |:white_check_mark:  |
@@ -83,10 +83,10 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 
 | Cloud           | Supported          |
 | --------------  | ------------------ |
-| Amazon EC2      |:white_check_mark:  |
+| AWS             |:white_check_mark:  |
 | Google Cloud    |:white_check_mark:  |
 | Linode          |:white_check_mark:  |
-| DigitalOcean    |:white_check_mark:  |
+| Digital Ocean   |:white_check_mark:  |
 | Vultr           |:white_check_mark:  |
 | Microsoft Azure |:white_check_mark:  |
 | OpenStack       |:white_check_mark:  |
