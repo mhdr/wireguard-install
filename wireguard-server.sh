@@ -3,7 +3,7 @@
 
 # Check Root Function
 function root-check() {
-  if [[ "$EUID" -ne 0 ]]; then
+  if [ "$EUID" -ne 0 ]; then
     echo "You need to run this script as root."
     exit
   fi
@@ -175,7 +175,7 @@ if [ ! -f "$WG_CONFIG" ]; then
     echo "   1) 51820 (Recommended)"
     echo "   2) Custom (Advanced)"
     echo "   3) Random [1024-65535]"
-    until [[ "$PORT_CHOICE" =~ ^[1-3]$ ]]; do
+    until [ "$PORT_CHOICE" =~ ^[1-3]$ ]; do
       read -rp "Port choice [1-3]: " -e -i 1 PORT_CHOICE
     done
     # Apply port response
@@ -184,7 +184,7 @@ if [ ! -f "$WG_CONFIG" ]; then
       SERVER_PORT="51820"
       ;;
     2)
-      until [[ "$SERVER_PORT" =~ ^[0-9]+$ ]] && [ "$SERVER_PORT" -ge 1 ] && [ "$SERVER_PORT" -le 65535 ]; do
+      until [ "$SERVER_PORT" =~ ^[0-9]+$ ] && [ "$SERVER_PORT" -ge 1 ] && [ "$SERVER_PORT" -le 65535 ]; do
         read -rp "Custom port [1-65535]: " -e -i 51820 SERVER_PORT
       done
       ;;
@@ -204,7 +204,7 @@ if [ ! -f "$WG_CONFIG" ]; then
     echo "   1) 25 (Default)"
     echo "   2) 0 "
     echo "   3) Custom (Advanced)"
-    until [[ "$NAT_CHOICE" =~ ^[1-3]$ ]]; do
+    until [ "$NAT_CHOICE" =~ ^[1-3]$ ]; do
       read -rp "Nat Choice [1-3]: " -e -i 1 NAT_CHOICE
     done
     # Nat Choices
@@ -216,7 +216,7 @@ if [ ! -f "$WG_CONFIG" ]; then
       NAT_CHOICE="0"
       ;;
     3)
-      until [[ "$NAT_CHOICE " =~ ^[0-9]+$ ]] && [ "$NAT_CHOICE " -ge 1 ] && [ "$NAT_CHOICE " -le 25 ]; do
+      until [ "$NAT_CHOICE " =~ ^[0-9]+$ ] && [ "$NAT_CHOICE " -ge 1 ] && [ "$NAT_CHOICE " -le 25 ]; do
         read -rp "Custom NAT [0-25]: " -e -i 25 NAT_CHOICE
       done
       ;;
@@ -232,7 +232,7 @@ if [ ! -f "$WG_CONFIG" ]; then
     echo "   1) 1280 (Recommended)"
     echo "   2) 1420"
     echo "   3) Custom (Advanced)"
-    until [[ "$MTU_CHOICE" =~ ^[1-3]$ ]]; do
+    until [ "$MTU_CHOICE" =~ ^[1-3]$ ]; do
       read -rp "MTU choice [1-3]: " -e -i 1 MTU_CHOICE
     done
     case $MTU_CHOICE in
@@ -243,7 +243,7 @@ if [ ! -f "$WG_CONFIG" ]; then
       MTU_CHOICE="1420"
       ;;
     3)
-      until [[ "$MTU_CHOICE" =~ ^[0-9]+$ ]] && [ "$MTU_CHOICE" -ge 1 ] && [ "$MTU_CHOICE" -le 1500 ]; do
+      until [ "$MTU_CHOICE" =~ ^[0-9]+$ ] && [ "$MTU_CHOICE" -ge 1 ] && [ "$MTU_CHOICE" -le 1500 ]; do
         read -rp "Custom MTU [1-1500]: " -e -i 1500 MTU_CHOICE
       done
       ;;
@@ -258,7 +258,7 @@ if [ ! -f "$WG_CONFIG" ]; then
     echo "What IPv do you want to use to connect to WireGuard server?"
     echo "   1) IPv4 (Recommended)"
     echo "   2) IPv6 (Advanced)"
-    until [[ "$SERVER_HOST" =~ ^[1-2]$ ]]; do
+    until [ "$SERVER_HOST" =~ ^[1-2]$ ]; do
       read -rp "IP Choice [1-2]: " -e -i 1 SERVER_HOST
     done
     case $SERVER_HOST in
@@ -280,7 +280,7 @@ if [ ! -f "$WG_CONFIG" ]; then
     echo "   1) No (Recommended)"
     echo "   2) IPV4"
     echo "   3) IPV6"
-    until [[ "$DISABLE_HOST" =~ ^[1-3]$ ]]; do
+    until [ "$DISABLE_HOST" =~ ^[1-3]$ ]; do
       read -rp "Disable Host Choice [1-3]: " -e -i 1 DISABLE_HOST
     done
     case $DISABLE_HOST in
@@ -319,7 +319,7 @@ if [ ! -f "$WG_CONFIG" ]; then
     echo "What traffic do you want the client to forward to wireguard?"
     echo "   1) Everything (Recommended)"
     echo "   2) Exclude Private IPs (Allows LAN IP connections)"
-    until [[ "$CLIENT_ALLOWED_IP" =~ ^[1-2]$ ]]; do
+    until [ "$CLIENT_ALLOWED_IP" =~ ^[1-2]$ ]; do
       read -rp "Client Allowed IP Choice [1-2]: " -e -i 1 CLIENT_ALLOWED_IP
     done
     case $CLIENT_ALLOWED_IP in
@@ -539,7 +539,7 @@ function install-wireguard-server() {
     prefetch: yes
     qname-minimisation: yes
     prefetch-key: yes' >/etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "CentOS" ]]; then
+  elif [ "$DISTRO" == "CentOS" ]; then
     # Install Unbound
     yum install unbound unbound-libs resolvconf -y
     sed -i 's|# interface: 0.0.0.0$|interface: 10.8.0.1|' /etc/unbound/unbound.conf
@@ -548,7 +548,7 @@ function install-wireguard-server() {
     sed -i 's|# hide-identity: no|hide-identity: yes|' /etc/unbound/unbound.conf
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "Fedora" ]]; then
+  elif [ "$DISTRO" == "Fedora" ]; then
     dnf install unbound unbound-host resolvconf -y
     sed -i 's|# interface: 0.0.0.0$|interface: 10.8.0.1|' /etc/unbound/unbound.conf
     sed -i 's|# interface: ::0$|interface: 127.0.0.1|' /etc/unbound/unbound.conf
@@ -556,7 +556,7 @@ function install-wireguard-server() {
     sed -i 's|# hide-identity: no|hide-identity: yes|' /etc/unbound/unbound.conf
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "Arch" ]]; then
+  elif [ "$DISTRO" == "Arch" ]; then
     pacman -S unbound unbound-host resolvconf
     mv /etc/unbound/unbound.conf /etc/unbound/unbound.conf.old
     echo 'server:
@@ -576,7 +576,7 @@ function install-wireguard-server() {
     hide-version: yes
     qname-minimisation: yes
     prefetch: yes' >/etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "Alpine" ]]; then
+  elif [ "$DISTRO" == "Alpine" ]; then
   ## Alpine Add More
   echo "Change Three Here"
   elif [ "$DISTRO" == "Gentoo" ]; then
@@ -681,7 +681,7 @@ else
     echo "   6) Uninstall WireGuard Interface"
     echo "   7) Update this script"
     echo "   8) Exit"
-    until [[ "$WIREGUARD_OPTIONS" =~ ^[1-8]$ ]]; do
+    until [ "$WIREGUARD_OPTIONS" =~ ^[1-8]$ ]; do
       read -rp "Select an Option [1-8]: " -e -i 1 WIREGUARD_OPTIONS
     done
     case $WIREGUARD_OPTIONS in
@@ -759,7 +759,7 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       cat $WG_CONFIG | grep start | awk '{ print $2 }'
       read -rp "Type in Client Name : " -e REMOVECLIENT
       read -rp "Are you sure you want to remove $REMOVECLIENT ? (y/n): " -n 1 -r
-      if [[ $REPLY =~ ^[Yy]$ ]]; then
+      if [ $REPLY =~ ^[Yy]$ ]; then
         echo
         sed -i "/\# $REMOVECLIENT start/,/\# $REMOVECLIENT end/d" $WG_CONFIG
         rm /etc/wireguard/clients/$REMOVECLIENT-$WIREGUARD_PUB_NIC.conf
