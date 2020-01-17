@@ -56,7 +56,7 @@ dist-check
 
 # Headless Install
 function headless-install() {
-  if [ $HEADLESS_INSTALL == "y" ]; then
+  if [ "$HEADLESS_INSTALL" == "" ]; then
     # Set default choices so that no questions will be asked.
     SERVER_HOST_V4=${SERVER_HOST_V4:-y}
     SERVER_HOST_V6=${SERVER_HOST_V6:-y}
