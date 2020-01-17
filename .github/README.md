@@ -8,7 +8,7 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)
 
 ### Prerequisite 
-- CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian
+- CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian, Alpine, Gentoo
 - Linux Kernel 4.1 or newer
 - You will need root access, or a user account with `sudo` privilege.
 
