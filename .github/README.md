@@ -19,7 +19,7 @@ bash /etc/wireguard/wireguard-server.sh
 ```
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
 
-### Headless install
+## Headless install
 
 The headless install lets users skip all the questions.
 
