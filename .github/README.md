@@ -101,12 +101,10 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 | Scaleway        |:white_check_mark:  |
 | EuroVPS         |:white_check_mark:  |
 | Hetzner Cloud   |:x:                 |
-
-
 ---
 ### Q&A
 Which hosting provider do you recommend?
-- [Google Cloud](https://console.cloud.google.com/freetrial?referralId=9142cd715558411aaaaaf2dc6d2b7886): Worldwide locations, starting at $10/month
+- [Google Cloud](https://gcpsignup.page.link/H9XL): Worldwide locations, starting at $10/month
 - [Vultr](https://www.vultr.com/?ref=8211592): Worldwide locations, IPv6 support, starting at $3.50/month
 - [Digital Ocean](https://m.do.co/c/fb46acb2b3b1): Worldwide locations, IPv6 support, starting at $5/month
 - [Linode](https://www.linode.com/?r=63227744138ea4f9d2dff402cfe5b8ad19e45dae): Worldwide locations, IPv6 support, starting at $5/month
