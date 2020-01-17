@@ -19,9 +19,7 @@ bash /etc/wireguard/wireguard-server.sh
 ```
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
 
-In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
-
-## Headless install
+### Headless install
 
 The headless install lets users skip all the questions.
 
@@ -29,6 +27,7 @@ The headless install lets users skip all the questions.
 chmod +x /etc/wireguard/wireguard-server.sh
 HEADLESS_INSTALL=y ./etc/wireguard/wireguard-server.sh
 ```
+In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
 
 ---
 ### After Installation
