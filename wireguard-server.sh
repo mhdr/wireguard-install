@@ -1,6 +1,5 @@
 #!/bin/bash
 # Secure WireGuard For CentOS, Debian, Ubuntu, Raspbian, Arch, Fedora, Redhat
-# https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/.github/LICENSE [MIT LICENSE]
 
 # Check Root Function
 function root-check() {
@@ -42,6 +41,10 @@ function dist-check() {
     DISTRO="Fedora"
   elif [ -e /etc/redhat-release ]; then
     DISTRO="Redhat"
+  elif [ -e /etc/alpine-release ]; then
+    DISTRO="Alpine"
+  elif [ -e /etc/gentoo-release ];  then
+    DISTRO="Gentoo"
   else
     echo "Your distribution is not supported (yet)."
     exit
@@ -51,13 +54,32 @@ function dist-check() {
 # Check Operating System
 dist-check
 
+# Headless Install
+function headless-install() {
+  if [ $HEADLESS_INSTALL == "y" ]; then
+    # Set default choices so that no questions will be asked.
+    SERVER_HOST_V4=${SERVER_HOST_V4:-y}
+    SERVER_HOST_V6=${SERVER_HOST_V6:-y}
+    SERVER_PUB_NIC=${SERVER_PUB_NIC:-y}
+    PORT_CHOICE=${PORT_CHOICE:-1}
+    NAT_CHOICE=${NAT_CHOICE:-1}
+    MTU_CHOICE=${MTU_CHOICE:-1}
+    SERVER_HOST=${SERVER_HOST:-1}
+    DISABLE_HOST=${DISABLE_HOST:-1}
+    CLIENT_ALLOWED_IP=${CLIENT_ALLOWED_IP:-1}
+    INSTALL_UNBOUND=${INSTALL_UNBOUND:-y}
+    CLIENT_NAME=${CLIENT_NAME:-client}
+  fi
+}
+
+# No GUI
+headless-install
+
 # Wireguard Public Network Interface
 WIREGUARD_PUB_NIC="wg0"
 # Location For WG_CONFIG
 WG_CONFIG="/etc/wireguard/$WIREGUARD_PUB_NIC.conf"
 if [ ! -f "$WG_CONFIG" ]; then
-  # Yes or No For Questions
-  INTERACTIVE=${INTERACTIVE:-yes}
   # Private Subnet Ipv4
   PRIVATE_SUBNET_V4=${PRIVATE_SUBNET_V4:-"10.8.0.0/24"}
   # Private Subnet Mask IPv4
@@ -92,11 +114,9 @@ if [ ! -f "$WG_CONFIG" ]; then
   function test-connectivity-v4() {
     if [ "$SERVER_HOST_V4" == "" ]; then
       SERVER_HOST_V4="$(wget -qO- -t1 -T2 ipv4.icanhazip.com)"
-      if [ "$INTERACTIVE" == "yes" ]; then
         read -rp "System public IPV4 address is $SERVER_HOST_V4. Is that correct? [y/n]: " -e -i "$IPV4_SUGGESTION" CONFIRM
         if [ "$CONFIRM" == "n" ]; then
           echo "Aborted. Use environment variable SERVER_HOST_V4 to set the correct public IP address."
-        fi
       fi
     fi
   }
@@ -125,11 +145,9 @@ if [ ! -f "$WG_CONFIG" ]; then
   function test-connectivity-v6() {
     if [ "$SERVER_HOST_V6" == "" ]; then
       SERVER_HOST_V6="$(wget -qO- -t1 -T2 ipv6.icanhazip.com)"
-      if [ "$INTERACTIVE" == "yes" ]; then
         read -rp "System public IPV6 address is $SERVER_HOST_V6. Is that correct? [y/n]: " -e -i "$IPV6_SUGGESTION" CONFIRM
         if [ "$CONFIRM" == "n" ]; then
           echo "Aborted. Use environment variable SERVER_HOST_V6 to set the correct public IP address."
-        fi
       fi
     fi
   }
@@ -141,13 +159,11 @@ if [ ! -f "$WG_CONFIG" ]; then
   function server-pub-nic() {
     if [ "$SERVER_PUB_NIC" == "" ]; then
       SERVER_PUB_NIC="$(ip -4 route ls | grep default | grep -Po '(?<=dev )(\S+)' | head -1)"
-      if [ "$INTERACTIVE" == "yes" ]; then
         read -rp "System public nic address is $SERVER_PUB_NIC. Is that correct? [y/n]: " -e -i y CONFIRM
         if [ "$CONFIRM" == "n" ]; then
-          echo "Aborted. Use environment variable SERVER_PUB_NIC to set the correct public IP address."
+          echo "Aborted. Use environment variable SERVER_PUB_NIC to set the correct public nic address."
         fi
       fi
-    fi
   }
 
   # Run The Function
@@ -321,7 +337,9 @@ if [ ! -f "$WG_CONFIG" ]; then
 
   # Would you like to install Unbound.
   function ask-install-dns() {
+  if [ "$INSTALL_UNBOUND" == "" ]; then
     read -rp "Do You Want To Install Unbound (y/n): " -e -i y INSTALL_UNBOUND
+  fi
   if [ "$INSTALL_UNBOUND" == "n" ]; then
       echo "Which DNS do you want to use with the VPN?"
       echo "   1) AdGuard (Recommended)"
@@ -374,10 +392,14 @@ if [ ! -f "$WG_CONFIG" ]; then
   ask-install-dns
 
   # What would you like to name your first WireGuard peer?
-  function client-name() {
+function client-name() {
+  if [ "$CLIENT_NAME" == "" ]; then
     echo "Tell me a name for the client config file. Use one word only, no special characters. (No Spaces)"
-    read -rp "Client Name: " -e CLIENT_NAME
-  }
+	until [ "$CLIENT_NAME" =~ ^[a-zA-Z0-9_]+$ ]; do
+		read -rp "Client name: " -e CLIENT_NAME
+	done
+  fi
+}
 
   # Client Name
   client-name
@@ -399,9 +421,9 @@ function install-wireguard-server() {
     apt-get install wireguard qrencode linux-headers-"$(uname -r)" haveged -y
   elif [ "$DISTRO" == "Raspbian" ]; then
     apt-get update
-    echo "deb http://deb.debian.org/debian/ unstable main" >/etc/apt/sources.list.d/unstable.list
     apt-get install dirmngr -y
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC
+    echo "deb http://deb.debian.org/debian/ unstable main" >/etc/apt/sources.list.d/unstable.list
     printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' >/etc/apt/preferences.d/limit-unstable
     apt-get update
     apt-get install wireguard qrencode raspberrypi-kernel-headers haveged -y
@@ -421,6 +443,11 @@ function install-wireguard-server() {
     wget -O /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
     yum install epel-release -y
     yum install wireguard-dkms wireguard-tools qrencode kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" haveged -y
+  elif [ "$DISTRO" == "Alpine" ]; then
+    apk add -U wireguard-tools -y
+  elif [ "$DISTRO" == "Gentoo" ]; then
+    emerge --sync
+    emerge wireguard-tools wireguard-modules
   fi
   }
 
@@ -552,6 +579,12 @@ function install-wireguard-server() {
     hide-version: yes
     qname-minimisation: yes
     prefetch: yes' >/etc/unbound/unbound.conf
+  elif [[ "$DISTRO" == "Alpine" ]]; then
+  ## Alpine Add More
+  echo "Change Three Here"
+  elif [ "$DISTRO" == "Gentoo" ]; then
+  ## Gentoo Add More
+  echo "Change Four Here"
   fi
     # Set DNS Root Servers
     wget -O /etc/unbound/root.hints https://www.internic.net/domain/named.cache
@@ -752,17 +785,25 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
         yum remove wireguard qrencode haveged unbound unbound-host -y
       elif [ "$DISTRO" == "Debian" ]; then
         apt-get remove --purge wireguard qrencode haveged unbound unbound-host -y
+        sed -i 's|deb http://deb.debian.org/debian/ unstable main||' /etc/apt/sources.list.d/unstable.list
       elif [ "$DISTRO" == "Ubuntu" ]; then
         apt-get remove --purge wireguard qrencode haveged unbound unbound-host -y
       elif [ "$DISTRO" == "Raspbian" ]; then
         apt-get remove --purge wireguard qrencode haveged unbound unbound-host dirmngr -y
         apt-key del 04EE7237B7D453EC
+        sed -i 's|deb http://deb.debian.org/debian/ unstable main||' /etc/apt/sources.list.d/unstable.list
       elif [ "$DISTRO" == "Arch" ]; then
         pacman -Rs wireguard qrencode haveged unbound unbound-host -y
       elif [ "$DISTRO" == "Fedora" ]; then
         dnf remove wireguard qrencode haveged unbound unbound-host -y
+        rm /etc/yum.repos.d/wireguard.repo
       elif [ "$DISTRO" == "Redhat" ]; then
         yum remove wireguard qrencode haveged unbound unbound-host -y
+        rm /etc/yum.repos.d/wireguard.repo
+      elif [ "$DISTRO" == "Alpine" ]; then
+        apk del wireguard-tools -y
+      elif [ "$DISTRO" == "Gentoo" ]; then
+        emerge -C wireguard-tools wireguard-modules
       fi
       # Removing Wireguard Files
       rm -rf /etc/wireguard

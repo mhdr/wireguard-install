@@ -21,6 +21,15 @@ The first time you run it, you'll have to follow the assistant and answer a few 
 
 In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
 
+## Headless install
+
+The headless install lets users skip all the questions.
+
+```
+chmod +x /etc/wireguard/wireguard-server.sh
+HEADLESS_INSTALL=y ./etc/wireguard/wireguard-server.sh
+```
+
 ---
 ### After Installation
 
@@ -93,6 +102,8 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 | Rackspace       |:white_check_mark:  |
 | Scaleway        |:white_check_mark:  |
 | EuroVPS         |:white_check_mark:  |
+| Hetzner Cloud   |:x:                 |
+
 
 ---
 ### Q&A
@@ -110,7 +121,6 @@ Which WireGuard client do you recommend?
 
 Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
-
 ---
 ### Credits & Licence
 Many thanks to the [contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
