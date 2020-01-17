@@ -27,7 +27,7 @@ The headless install lets users skip all the questions.
 chmod +x /etc/wireguard/wireguard-server.sh
 HEADLESS_INSTALL=y ./etc/wireguard/wireguard-server.sh
 ```
-In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your server and connect using your favorite WireGuard client.
+In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your WireGuard Interface and connect using your favorite WireGuard Peer.
 
 ---
 ### After Installation
@@ -43,13 +43,12 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 ---
 ### Features
 
-- Installs and configures a ready-to-use WireGuard server
+- Installs and configures a ready-to-use WireGuard Interface
 - Iptables rules and forwarding managed in a seamless way
 - If needed, the script can cleanly remove WireGuard, including configuration and iptables rules
 - Variety of DNS resolvers to be pushed to the clients
 - Choice to use a self-hosted resolver with Unbound (supports already existing Unbound installations)
 - Block DNS leaks
-- Protect clients with a password (private key encryption)
 - Many other little things!
 
 ---
