@@ -394,7 +394,7 @@ if [ ! -f "$WG_CONFIG" ]; then
   # What would you like to name your first WireGuard peer?
 function client-name() {
   if [ "$CLIENT_NAME" == "" ]; then
-    echo " Lets name the WireGuard Peer, Only use words no special characters"
+    echo "Lets name the WireGuard Peer, Only use words no special characters"
     read -p "Client name: " -e CLIENT_NAME
   fi
 }
