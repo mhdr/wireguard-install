@@ -425,7 +425,7 @@ function install-wireguard-server() {
     apt-get update
     apt-get install wireguard qrencode raspberrypi-kernel-headers haveged -y
   elif [ "$DISTRO" == "Arch" ]; then
-    pacman -S linux-headers wireguard-tools wireguard-arch haveged qrencode 
+    pacman -S linux-headers wireguard-tools wireguard-arch haveged qrencode
   elif [ "$DISTRO" = 'Fedora' ]; then
     dnf update -y
     dnf copr enable jdoss/wireguard -y
