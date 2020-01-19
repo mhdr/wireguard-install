@@ -26,10 +26,10 @@ The headless install lets users skip all the questions.
 chmod +x /etc/wireguard/wireguard-server.sh
 HEADLESS_INSTALL=y ./etc/wireguard/wireguard-server.sh
 ```
-In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your WireGuard Interface and connect using your favorite WireGuard Peer.
 
 ---
 ### After Installation
+In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your WireGuard Interface and connect using your favorite WireGuard Peer.
 
 - Show WireGuard Interface
 - Start WireGuard Interface
