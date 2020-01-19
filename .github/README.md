@@ -53,13 +53,13 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 ---
 ### Options
 
-* INTERACTIVE - if set to `no`, the script will not prompt for user input
-* PRIVATE_SUBNET_V4 - private subnet configuration, "10.0.0.0/24" by default
-* PRIVATE_SUBNET_V6 - private subnet configuration, "fd42:42:42::0/64" by default
-* SERVER_HOST_V4 - public IPv4 address, detected by default using `wget`
-* SERVER_HOST_V6 - public IPv6 address, detected by default using `wget`
-* SERVER_PORT - public port for wireguard server
-* MTU_CHOICE - the MTU the client will use to connect to DNS
+* `INTERACTIVE` - if set to `no`, the script will not prompt for user input
+* `PRIVATE_SUBNET_V4` - private subnet configuration, "10.0.0.0/24" by default
+* `PRIVATE_SUBNET_V6` - private subnet configuration, "fd42:42:42::0/64" by default
+* `SERVER_HOST_V4` - public IPv4 address, detected by default using `wget`
+* `SERVER_HOST_V6` - public IPv6 address, detected by default using `wget`
+* `SERVER_PORT` - public port for wireguard server
+* `MTU_CHOICE` - the MTU the client will use to connect to DNS
 
 ---
 ### Compatibility
