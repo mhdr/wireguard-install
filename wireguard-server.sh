@@ -434,12 +434,14 @@ function install-wireguard-server() {
     yum update -y
     wget -O /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
     yum install epel-release -y
-    yum install wireguard-dkms wireguard-tools qrencode kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" haveged -y
+    yum install kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" -y
+    yum install wireguard-dkms wireguard-tools qrencode haveged -y
   elif [ "$DISTRO" == "Redhat" ]; then
     yum update -y
     wget -O /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
     yum install epel-release -y
-    yum install wireguard-dkms wireguard-tools qrencode kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" haveged -y
+    yum install kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" -y
+    yum install wireguard-dkms wireguard-tools qrencode haveged -y
   elif [ "$DISTRO" == "Alpine" ]; then
     apk add -U wireguard-tools -y
   elif [ "$DISTRO" == "Gentoo" ]; then
