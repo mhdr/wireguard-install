@@ -3,7 +3,7 @@
 
 # Check Root Function
 function root-check() {
-  if [[ "$EUID" -ne 0 ]]; then
+  if [ "$EUID" -ne 0 ]; then
     echo "You need to run this script as root."
     exit
   fi
@@ -338,6 +338,7 @@ if [ ! -f "$WG_CONFIG" ]; then
   # Would you like to install Unbound.
   function ask-install-dns() {
   if [ "$INSTALL_UNBOUND" == "" ]; then
+    # shellcheck disable=SC2034
     read -rp "Do You Want To Install Unbound (y/n): " -e -i y INSTALL_UNBOUND
   fi
   if [ "$INSTALL_UNBOUND" == "n" ]; then
@@ -395,6 +396,7 @@ if [ ! -f "$WG_CONFIG" ]; then
 function client-name() {
   if [ "$CLIENT_NAME" == "" ]; then
     echo "Lets name the WireGuard Peer, Only use words no special characters"
+    # shellcheck disable=SC2162
     read -p "Client name: " -e CLIENT_NAME
   fi
 }
@@ -762,6 +764,7 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       if [[ $REPLY =~ ^[Yy]$ ]]; then
         echo
         sed -i "/\# $REMOVECLIENT start/,/\# $REMOVECLIENT end/d" $WG_CONFIG
+        # shellcheck disable=SC2086
         rm /etc/wireguard/clients/$REMOVECLIENT-$WIREGUARD_PUB_NIC.conf
       fi
       exit
@@ -774,6 +777,7 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       ;;
     6)
       # Uninstall Wireguard and purging files
+      # shellcheck disable=SC2034
       read -rp "Do you really want to remove Wireguard? [y/n]:" -e -i n REMOVE_WIREGUARD
     if [ "$REMOVE_WIREGUARD" = "y" ]; then
       # Stop WireGuard
