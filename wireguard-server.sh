@@ -549,7 +549,7 @@ function install-wireguard-server() {
     prefetch: yes
     qname-minimisation: yes
     prefetch-key: yes' >/etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "CentOS" ]]; then
+  elif [ "$DISTRO" == "CentOS" ]; then
     # Install Unbound
     yum install unbound unbound-libs -y
     sed -i 's|# interface: 0.0.0.0$|interface: 10.8.0.1|' /etc/unbound/unbound.conf
@@ -557,14 +557,14 @@ function install-wireguard-server() {
     sed -i 's|# hide-identity: no|hide-identity: yes|' /etc/unbound/unbound.conf
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "Fedora" ]]; then
+  elif [ "$DISTRO" == "Fedora" ]; then
     dnf install unbound unbound-host -y
     sed -i 's|# interface: 0.0.0.0$|interface: 10.8.0.1|' /etc/unbound/unbound.conf
     sed -i 's|# access-control: 127.0.0.0/8 allow|access-control: 10.8.0.1/24 allow|' /etc/unbound/unbound.conf
     sed -i 's|# hide-identity: no|hide-identity: yes|' /etc/unbound/unbound.conf
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "Arch" ]]; then
+  elif [ "$DISTRO" == "Arch" ]; then
     pacman -S unbound unbound-host
     mv /etc/unbound/unbound.conf /etc/unbound/unbound.conf.old
     echo 'server:
@@ -584,7 +584,7 @@ function install-wireguard-server() {
     hide-version: yes
     qname-minimisation: yes
     prefetch: yes' >/etc/unbound/unbound.conf
-  elif [[ "$DISTRO" == "Alpine" ]]; then
+  elif [ "$DISTRO" == "Alpine" ]; then
   ## Alpine Add More
   echo "Change Three Here"
   elif [ "$DISTRO" == "Gentoo" ]; then
