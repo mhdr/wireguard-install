@@ -117,5 +117,5 @@ Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
 ---
 ### Credits & Licence
-Many thanks to the [contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
-This project is under the [MIT Licence](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/LICENSE)
+Many thanks to the [Contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
+This project is under the [General Public License](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/LICENSE)
