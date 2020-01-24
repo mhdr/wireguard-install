@@ -774,13 +774,13 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
         # shellcheck disable=SC2086
         rm /etc/wireguard/clients/$REMOVECLIENT-$WIREGUARD_PUB_NIC.conf
       fi
-      exit
       if pgrep systemd-journal; then
         systemctl restart wg-quick@$WIREGUARD_PUB_NIC
       else
         service wg-quick@$WIREGUARD_PUB_NIC restart
       fi
       echo "Client named $REMOVECLIENT has been removed."
+      exit
       ;;
     6)
       # Uninstall Wireguard and purging files
