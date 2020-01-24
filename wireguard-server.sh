@@ -411,13 +411,15 @@ function install-wireguard-server() {
     apt-get install software-properties-common -y
     add-apt-repository ppa:wireguard/wireguard -y
     apt-get update
-    apt-get install wireguard qrencode linux-headers-"$(uname -r)" haveged -y
+    apt-get install linux-headers-"$(uname -r)" -y
+    apt-get install wireguard qrencode haveged -y
   elif [ "$DISTRO" == "Debian" ]; then
     apt-get update
     echo "deb http://deb.debian.org/debian/ unstable main" >/etc/apt/sources.list.d/unstable.list
     printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' >/etc/apt/preferences.d/limit-unstable
     apt-get update
-    apt-get install wireguard qrencode linux-headers-"$(uname -r)" haveged -y
+    apt-get install linux-headers-"$(uname -r)" -y
+    apt-get install wireguard qrencode haveged -y
   elif [ "$DISTRO" == "Raspbian" ]; then
     apt-get update
     apt-get install dirmngr -y
@@ -425,13 +427,15 @@ function install-wireguard-server() {
     echo "deb http://deb.debian.org/debian/ unstable main" >/etc/apt/sources.list.d/unstable.list
     printf 'Package: *\nPin: release a=unstable\nPin-Priority: 90\n' >/etc/apt/preferences.d/limit-unstable
     apt-get update
-    apt-get install wireguard qrencode raspberrypi-kernel-headers haveged -y
+    apt-get install raspberrypi-kernel-headers -y
+    apt-get install wireguard qrencode haveged -y
   elif [ "$DISTRO" == "Arch" ]; then
     pacman -S linux-headers wireguard-tools wireguard-arch haveged qrencode
   elif [ "$DISTRO" = 'Fedora' ]; then
     dnf update -y
     dnf copr enable jdoss/wireguard -y
-    dnf install qrencode kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" wireguard-dkms wireguard-tools haveged -y
+    dnf install kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" -y
+    dnf install qrencode wireguard-dkms wireguard-tools haveged -y
   elif [ "$DISTRO" == "CentOS" ]; then
     yum update -y
     wget -O /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
