@@ -8,4 +8,4 @@ jobs:
     - name: shellcheck
       uses: ludeeus/action-shellcheck@master
       with:
-        args: openvpn-install.sh -e C2034,SC2162,SC2140,SC2027,SC2086,SC2140,SC1117
+        args: wireguard-server.sh -e C2034,SC2162,SC2140,SC2027,SC2086,SC2140,SC1117
