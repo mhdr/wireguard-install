@@ -67,6 +67,7 @@ function headless-install() {
     SERVER_HOST=${SERVER_HOST:-1}
     DISABLE_HOST=${DISABLE_HOST:-1}
     CLIENT_ALLOWED_IP=${CLIENT_ALLOWED_IP:-1}
+    # shellcheck disable=SC2034
     INSTALL_UNBOUND=${INSTALL_UNBOUND:-y}
     CLIENT_NAME=${CLIENT_NAME:-client}
   fi
