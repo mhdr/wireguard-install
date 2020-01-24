@@ -24,7 +24,7 @@ The headless install lets users skip all the questions.
 
 ```
 chmod +x /etc/wireguard/wireguard-server.sh
-HEADLESS_INSTALL=y ./etc/wireguard/wireguard-server.sh
+HEADLESS_INSTALL=y /etc/wireguard/wireguard-server.sh
 ```
 
 ---
