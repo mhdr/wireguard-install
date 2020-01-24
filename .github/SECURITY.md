@@ -1,11 +1,5 @@
 # Security Policy
 
-### OS Supported Versions
-
-OS Versions that are supported.
-
-CentOS, Debian, Ubuntu, Arch, Fedora, RedHat, Raspbian
-
 ### Version Breakdown
 
 | OS              | Supported          | i386               | amd64              | armhf              | arm64              |
