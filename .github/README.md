@@ -119,4 +119,4 @@ Is there an WireGuard documentation?
 ---
 ### Credits & Licence
 Many thanks to the [Contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
-This project is under the [General Public License](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/LICENSE)
+This project is under the [General Public License](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/.github/LICENSE)
