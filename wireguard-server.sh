@@ -786,7 +786,6 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
         service wg-quick@$WIREGUARD_PUB_NIC restart
       fi
       echo "Client named $REMOVECLIENT has been removed."
-      exit
       ;;
     6)
       # Uninstall Wireguard and purging files
@@ -803,8 +802,8 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       elif [ "$DISTRO" == "Ubuntu" ]; then
         apt-get remove --purge wireguard qrencode haveged unbound unbound-host -y
       elif [ "$DISTRO" == "Raspbian" ]; then
-        apt-get remove --purge wireguard qrencode haveged unbound unbound-host dirmngr -y
         apt-key del 04EE7237B7D453EC
+        apt-get remove --purge wireguard qrencode haveged unbound unbound-host dirmngr -y
         sed -i 's|deb http://deb.debian.org/debian/ unstable main||' /etc/apt/sources.list.d/unstable.list
       elif [ "$DISTRO" == "Arch" ]; then
         pacman -Rs wireguard qrencode haveged unbound unbound-host -y
