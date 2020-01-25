@@ -479,6 +479,7 @@ function install-wireguard-server() {
     max-udp-size: 3072
     access-control: 0.0.0.0/0                 refuse
     access-control: 10.8.0.0/24               allow
+    access-control: 127.0.0.1                 allow
     private-address: 10.8.0.0/24
     hide-identity: yes
     hide-version: yes
@@ -509,6 +510,7 @@ function install-wireguard-server() {
     max-udp-size: 3072
     access-control: 0.0.0.0/0                 refuse
     access-control: 10.8.0.0/24               allow
+    access-control: 127.0.0.1                 allow
     private-address: 10.8.0.0/24
     hide-identity: yes
     hide-version: yes
@@ -536,6 +538,7 @@ function install-wireguard-server() {
     max-udp-size: 3072
     access-control: 0.0.0.0/0                 refuse
     access-control: 10.8.0.0/24               allow
+    access-control: 127.0.0.1                 allow
     private-address: 10.8.0.0/24
     hide-identity: yes
     hide-version: yes
@@ -554,6 +557,7 @@ function install-wireguard-server() {
     yum install unbound unbound-libs -y
     sed -i 's|# interface: 0.0.0.0$|interface: 10.8.0.1|' /etc/unbound/unbound.conf
     sed -i 's|# access-control: 127.0.0.0/8 allow|access-control: 10.8.0.1/24 allow|' /etc/unbound/unbound.conf
+    sed -i 's|# interface: ::0$|interface: 127.0.0.1|' /etc/unbound/unbound.conf
     sed -i 's|# hide-identity: no|hide-identity: yes|' /etc/unbound/unbound.conf
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
@@ -561,6 +565,7 @@ function install-wireguard-server() {
     dnf install unbound unbound-host -y
     sed -i 's|# interface: 0.0.0.0$|interface: 10.8.0.1|' /etc/unbound/unbound.conf
     sed -i 's|# access-control: 127.0.0.0/8 allow|access-control: 10.8.0.1/24 allow|' /etc/unbound/unbound.conf
+    sed -i 's|# interface: ::0$|interface: 127.0.0.1|' /etc/unbound/unbound.conf
     sed -i 's|# hide-identity: no|hide-identity: yes|' /etc/unbound/unbound.conf
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
@@ -576,6 +581,7 @@ function install-wireguard-server() {
     root-hints: root.hints
     interface: 10.8.0.0
     access-control: 10.8.0.0 allow
+    access-control: 127.0.0.1 allow
     port: 53
     num-threads: 2
     use-caps-for-id: yes
