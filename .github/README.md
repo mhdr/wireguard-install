@@ -54,14 +54,15 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 ### Options
 * `PRIVATE_SUBNET_V4` - private subnet configuration, "10.0.0.0/24" by default
 * `PRIVATE_SUBNET_V6` - private subnet configuration, "fd42:42:42::0/64" by default
-* `SERVER_PUB_NIC` - public nig address, decected by default
 * `SERVER_HOST_V4` - public IPv4 address, detected by default using `wget`
 * `SERVER_HOST_V6` - public IPv6 address, detected by default using `wget`
-* `NAT_CHOICE` - keep alive settings for wireguard client
+* `SERVER_PUB_NIC` - public nig address, decected by default
+* `SERVER_PORT` - public port for wireguard server
 * `DISABLE_HOST` - Disable or enable ipv4 and ipv6
+* `CLIENT_ALLOWED_IP` - 
+* `NAT_CHOICE` - keep alive settings for wireguard client
 * `INSTALL_UNBOUND` - Install unbound settings
 * `CLIENT_NAME` - name of the client
-* `SERVER_PORT` - public port for wireguard server
 * `MTU_CHOICE` - the MTU the client will use to connect to DNS
 
 ---
