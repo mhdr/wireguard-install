@@ -41,10 +41,6 @@ function dist-check() {
     DISTRO="Fedora"
   elif [ -e /etc/redhat-release ]; then
     DISTRO="Redhat"
-  elif [ -e /etc/alpine-release ]; then
-    DISTRO="Alpine"
-  elif [ -e /etc/gentoo-release ];  then
-    DISTRO="Gentoo"
   else
     echo "Your distribution is not supported (yet)."
     exit
@@ -450,11 +446,6 @@ function install-wireguard-server() {
     yum install epel-release -y
     yum install kernel-headers-"$(uname -r)" kernel-devel-"$(uname -r)" -y
     yum install wireguard-dkms wireguard-tools qrencode haveged -y
-  elif [ "$DISTRO" == "Alpine" ]; then
-    apk add -U wireguard-tools -y
-  elif [ "$DISTRO" == "Gentoo" ]; then
-    emerge --sync
-    emerge wireguard-tools wireguard-modules
   fi
   }
 
@@ -590,12 +581,6 @@ function install-wireguard-server() {
     hide-version: yes
     qname-minimisation: yes
     prefetch: yes' >/etc/unbound/unbound.conf
-  elif [ "$DISTRO" == "Alpine" ]; then
-  ## Alpine Add More
-  echo "Change Three Here"
-  elif [ "$DISTRO" == "Gentoo" ]; then
-  ## Gentoo Add More
-  echo "Change Four Here"
   fi
     # Set DNS Root Servers
     wget -O /etc/unbound/root.hints https://www.internic.net/domain/named.cache
