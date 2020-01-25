@@ -562,7 +562,7 @@ function install-wireguard-server() {
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
   elif [ "$DISTRO" == "Arch" ]; then
-    pacman -S unbound unbound-host
+    pacman -Sy unbound unbound-host
     mv /etc/unbound/unbound.conf /etc/unbound/unbound.conf.old
     echo 'server:
     use-syslog: yes
