@@ -27,8 +27,6 @@ chmod +x /etc/wireguard/wireguard-server.sh
 HEADLESS_INSTALL=y /etc/wireguard/wireguard-server.sh
 ```
 
-[![asciicast](https://asciinema.org/a/p3DI5J1KjSwWG19wNwEARt44T.svg)](https://asciinema.org/a/p3DI5J1KjSwWG19wNwEARt44T)
-
 ---
 ### After Installation
 In your `/etc/wireguard/clients` directory, you will have `.conf` files. These are the client configuration files. Download them from your WireGuard Interface and connect using your favorite WireGuard Peer.
@@ -117,6 +115,7 @@ Which WireGuard client do you recommend?
 Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
 ---
+
 ### Credits & Licence
 Many thanks to the [Contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
 This project is under the [General Public License](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/.github/LICENSE)
