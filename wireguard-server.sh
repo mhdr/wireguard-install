@@ -426,8 +426,9 @@ function install-wireguard-server() {
     apt-get install raspberrypi-kernel-headers -y
     apt-get install wireguard qrencode haveged -y
   elif [ "$DISTRO" == "Arch" ]; then
-    pacman -Sy linux-headers
-    pacman -Sy linux-headers wireguard-tools wireguard-arch haveged qrencode iptables
+    pacman -Syu --noconfirm linux-headers
+    pacman -Syu --noconfirm haveged qrencode iptables
+    pacman -Syu --noconfirm wireguard-tools wireguard-arch
   elif [ "$DISTRO" = 'Fedora' ]; then
     dnf update -y
     dnf copr enable jdoss/wireguard -y
@@ -562,7 +563,7 @@ function install-wireguard-server() {
     sed -i 's|# hide-version: no|hide-version: yes|' /etc/unbound/unbound.conf
     sed -i 's|use-caps-for-id: no|use-caps-for-id: yes|' /etc/unbound/unbound.conf
   elif [ "$DISTRO" == "Arch" ]; then
-    pacman -Sy unbound unbound-host
+    pacman -Syu --noconfirm unbound
     mv /etc/unbound/unbound.conf /etc/unbound/unbound.conf.old
     echo 'server:
     use-syslog: yes
