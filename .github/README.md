@@ -12,20 +12,22 @@
 - Linux Kernel 4.1 or newer
 - You will need root access, or a user account with `sudo` privilege.
 
-## Installation
+### Installation
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
 bash /etc/wireguard/wireguard-server.sh
 ```
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
 
-## Headless install
+### Headless install
 The headless install lets users skip all the questions.
 
 ```
 chmod +x /etc/wireguard/wireguard-server.sh
 HEADLESS_INSTALL=y /etc/wireguard/wireguard-server.sh
 ```
+
+[![asciicast](https://asciinema.org/a/p3DI5J1KjSwWG19wNwEARt44T.svg)](https://asciinema.org/a/p3DI5J1KjSwWG19wNwEARt44T)
 
 ---
 ### After Installation
@@ -39,9 +41,9 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 - Uninstall WireGuard Interface
 - Update this script
 
+
 ---
 ### Features
-
 - Installs and configures a ready-to-use WireGuard Interface
 - Iptables rules and forwarding managed in a seamless way
 - If needed, the script can cleanly remove WireGuard, including configuration and iptables rules
@@ -52,7 +54,6 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 
 ---
 ### Options
-
 * `PRIVATE_SUBNET_V4` - private subnet configuration, "10.0.0.0/24" by default
 * `PRIVATE_SUBNET_V6` - private subnet configuration, "fd42:42:42::0/64" by default
 * `SERVER_HOST_V4` - public IPv4 address, detected by default using `wget`
