@@ -12,19 +12,17 @@
 - Linux Kernel 4.1 or newer
 - You will need root access, or a user account with `sudo` privilege.
 
-### Installation
+### Server Installation
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-server.sh -P /etc/wireguard/
 bash /etc/wireguard/wireguard-server.sh
 ```
 The first time you run it, you'll have to follow the assistant and answer a few questions to setup your VPN server.
 
-### Headless install
-The headless install lets users skip all the questions.
-
+### Client Installation
 ```
-chmod +x /etc/wireguard/wireguard-server.sh
-HEADLESS_INSTALL=y /etc/wireguard/wireguard-server.sh
+wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-client.sh -P /etc/wireguard/
+HEADLESS_INSTALL=y /etc/wireguard/wireguard-client.sh
 ```
 
 ---
