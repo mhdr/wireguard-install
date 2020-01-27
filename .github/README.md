@@ -22,7 +22,7 @@ The first time you run it, you'll have to follow the assistant and answer a few 
 ### Client Installation
 ```
 wget https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/wireguard-client.sh -P /etc/wireguard/
-HEADLESS_INSTALL=y /etc/wireguard/wireguard-client.sh
+bash /etc/wireguard/wireguard-client.sh
 ```
 
 ---
