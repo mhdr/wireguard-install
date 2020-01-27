@@ -1,5 +1,5 @@
 #!/bin/bash
-# Secure WireGuard For CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian, Alpine, Gentoo
+# Secure WireGuard For CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian
 
 # Check Root Function
 function root-check() {
