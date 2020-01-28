@@ -37,7 +37,6 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 - Uninstall WireGuard Interface
 - Update this script
 
-
 ---
 ### Features
 - Installs and configures a ready-to-use WireGuard Interface
@@ -120,6 +119,18 @@ Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
 ---
 
+### Developing
+Use a browser based development environment:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/complexorganizations/wireguard-install)
+
+#### Local development environment:
+
+1. [Clone this repo](https://help.github.com/en/articles/cloning-a-repository) with git.
+2. ADD MORE HERE.
+3. ADD MORE.
+
+___
 ### Credits & Licence
 Many thanks to the [Contributors](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
 This project is under the [General Public License](https://raw.githubusercontent.com/complexorganizations/wireguard-install/master/.github/LICENSE)
