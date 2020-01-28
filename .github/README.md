@@ -117,18 +117,12 @@ Which WireGuard client do you recommend?
 
 Is there an WireGuard documentation?
 - Yes, please head to the [WireGuard Manual](https://www.wireguard.com), which references all the options.
----
 
+---
 ### Developing
 Use a browser based development environment:
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/complexorganizations/wireguard-install)
-
-#### Local development environment:
-
-1. [Clone this repo](https://help.github.com/en/articles/cloning-a-repository) with git.
-2. ADD MORE HERE.
-3. ADD MORE.
 
 ___
 ### Credits & Licence
