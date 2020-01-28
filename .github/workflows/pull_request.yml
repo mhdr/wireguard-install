@@ -2,7 +2,7 @@ on: pull_request
 name: ShellCheck
 jobs:
   shellcheck:
-    runs-on: linux
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
     - name: shellcheck
