@@ -1,11 +1,10 @@
 # Secure Wireguard Installer
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/complexorganizations/wireguard-install)
-![ShellCheck](https://github.com/complexorganizations/wireguard-install/workflows/ShellCheck/badge.svg)
+[![GitHub release](https://img.shields.io/github/v/release/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/releases)
+[![ShellCheck](https://github.com/complexorganizations/wireguard-install/workflows/ShellCheck/badge.svg)](https://github.com/complexorganizations/wireguard-install/actions)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fcomplexorganizations%2Fwireguard-install?ref=badge_shield)
-![GitHub All Releases](https://img.shields.io/github/downloads/complexorganizations/wireguard-install/total)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/complexorganizations/wireguard-install)
-![GitHub issues](https://img.shields.io/github/issues/complexorganizations/wireguard-install)
-![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/commits/master)
+[![GitHub issues](https://img.shields.io/github/issues/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
 
 ### Prerequisite 
 - CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian
