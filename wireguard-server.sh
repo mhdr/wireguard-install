@@ -806,10 +806,6 @@ PublicKey = $SERVER_PUBKEY" >"/etc/wireguard/clients"/"$NEW_CLIENT_NAME"-$WIREGU
       elif [ "$DISTRO" == "Redhat" ]; then
         yum remove wireguard qrencode haveged unbound unbound-host -y
         rm /etc/yum.repos.d/wireguard.repo
-      elif [ "$DISTRO" == "Alpine" ]; then
-        apk del wireguard-tools -y
-      elif [ "$DISTRO" == "Gentoo" ]; then
-        emerge -C wireguard-tools wireguard-modules
       fi
       # Removing Wireguard Files
       rm -rf /etc/wireguard
