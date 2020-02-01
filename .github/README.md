@@ -5,7 +5,7 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/commits/master)
 [![GitHub issues](https://img.shields.io/github/issues/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/issues)
 [![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/complexorganizations/wireguard-install)](hhttps://github.com/complexorganizations/wireguard-install/pulls)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/pulls)
 
 ### Prerequisite 
 - CentOS, Debian, Ubuntu, Arch, Fedora, Redhat, Raspbian
