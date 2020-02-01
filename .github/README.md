@@ -5,7 +5,6 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/commits/master)
 [![GitHub issues](https://img.shields.io/github/issues/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/issues)
 [![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/pulls)
 [![GitHub forks](https://img.shields.io/github/forks/complexorganizations/wireguard-install?style=social)](https://github.com/complexorganizations/wireguard-install/fork?fragment=1)
 [![GitHub stars](https://img.shields.io/github/stars/complexorganizations/wireguard-install?style=social)](https://github.com/complexorganizations/wireguard-install/fork?fragment=1)
 
