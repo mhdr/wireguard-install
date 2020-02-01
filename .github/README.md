@@ -1,7 +1,6 @@
 # Secure Wireguard Installer
 [![GitHub release](https://img.shields.io/github/v/release/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/releases)
 [![ShellCheck](https://github.com/complexorganizations/wireguard-install/workflows/ShellCheck/badge.svg)](https://github.com/complexorganizations/wireguard-install/actions)
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/commits/master)
 [![GitHub issues](https://img.shields.io/github/issues/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/issues)
 [![GitHub contributors](https://img.shields.io/github/contributors/complexorganizations/wireguard-install)](https://github.com/complexorganizations/wireguard-install/graphs/contributors)
 [![GitHub forks](https://img.shields.io/github/forks/complexorganizations/wireguard-install?style=social)](https://github.com/complexorganizations/wireguard-install/fork?fragment=1)
