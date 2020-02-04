@@ -99,6 +99,7 @@ In your `/etc/wireguard/clients` directory, you will have `.conf` files. These a
 | Scaleway        |:white_check_mark:  |
 | EuroVPS         |:white_check_mark:  |
 | Hetzner Cloud   |:x:                 |
+| Strato          |:x:                 |
 
 ---
 ### Q&A
