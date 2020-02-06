@@ -406,7 +406,7 @@ function install-wireguard-server() {
     apt-get update
     apt-get install linux-headers-"$(uname -r)" -y
     apt-get install wireguard qrencode haveged -y
-  if [ ! $VERSION_ID =~ (16.04|18.04) ]; then
+  if [ ! $VERSION_ID = (16.04|18.04) ]; then
     apt-get update
     apt-get install software-properties-common -y
     add-apt-repository ppa:wireguard/wireguard -y
@@ -437,7 +437,7 @@ function install-wireguard-server() {
   elif [ "$DISTRO" = 'Fedora' ]; then
     dnf update -y
     dnf install wireguard-tools
-  if [ ! $VERSION_ID =~ (31) ]; then
+  if [ ! $VERSION_ID = (31) ]; then
     dnf update -y
     dnf copr enable jdoss/wireguard
     dnf dnf install wireguard-dkms wireguard-tools
@@ -448,7 +448,7 @@ function install-wireguard-server() {
     yum config-manager --set-enabled PowerTools
     yum copr enable jdoss/wireguard
     yum install wireguard-dkms wireguard-tools
-  if [ ! $VERSION_ID =~ (6|7) ]; then
+  if [ ! $VERSION_ID = (6|7) ]; then
     yum update -y
     wget -O /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
     yum update -y
@@ -462,7 +462,7 @@ function install-wireguard-server() {
     subscription-manager repos --enable codeready-builder-for-rhel-8-$(arch)-rpms
     yum copr enable jdoss/wireguard
     yum install wireguard-dkms wireguard-tools
-  if [ ! $VERSION_ID =~ (8) ]; then
+  if [ ! $VERSION_ID = (8) ]; then
     yum update -y
     wget -O /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
     yum update -y
