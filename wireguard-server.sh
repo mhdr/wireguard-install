@@ -198,7 +198,7 @@ if [ ! -f "$WG_CONFIG" ]; then
   function nat-keepalive() {
     echo "What do you want your keepalive interval to be?"
     echo "   1) 25 (Default)"
-    echo "   2) 0 "
+    echo "   2) 0"
     echo "   3) Custom (Advanced)"
     until [[ "$NAT_CHOICE" =~ ^[1-3]$ ]]; do
       read -rp "Nat Choice [1-3]: " -e -i 1 NAT_CHOICE
